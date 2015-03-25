@@ -1,0 +1,22 @@
+.MAKE_VERSION:	VERSION-1.0
+.BUILT_LAST_MAKE_RUN:
+.depcheck-impl:
+	echo "# This code depends on make tool being used" >.dep.inc
+	if [ -n "" ]; then \
+	    echo "DEPFILES=\$(wildcard \$(addsuffix .d, \${OBJECTFILES}))" >>.dep.inc; \
+	    echo "ifneq (\${DEPFILES},)" >>.dep.inc; \
+	    echo "include \${DEPFILES}" >>.dep.inc; \
+	    echo "endif" >>.dep.inc; \
+	else \
+	    echo ".KEEP_STATE:" >>.dep.inc; \
+	    echo ".KEEP_STATE_FILE:.make.state.\${CONF}" >>.dep.inc; \
+	fi
+build/Debug/OracleSolarisStudio-Solaris-Sparc/Converting.o:	/usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/ccompile.h /usr/include/sys/isa_defs.h /usr/include/iso/stdio_iso.h /usr/include/sys/va_list.h /usr/include/stdio_tag.h /usr/include/stdio_impl.h /usr/include/iso/stdio_c99.h /usr/include/stdlib.h /usr/include/iso/stdlib_iso.h /usr/include/iso/stdlib_c99.h 
+	mkdir -p build/Debug/OracleSolarisStudio-Solaris-Sparc
+	cc   -c -g -o build/Debug/OracleSolarisStudio-Solaris-Sparc/Converting.o Converting.c
+build/Debug/OracleSolarisStudio-Solaris-Sparc/main.o:	/usr/include/stdio.h /usr/include/sys/feature_tests.h /usr/include/sys/ccompile.h /usr/include/sys/isa_defs.h /usr/include/iso/stdio_iso.h /usr/include/sys/va_list.h /usr/include/stdio_tag.h /usr/include/stdio_impl.h /usr/include/iso/stdio_c99.h /usr/include/stdlib.h /usr/include/iso/stdlib_iso.h /usr/include/iso/stdlib_c99.h 
+	mkdir -p build/Debug/OracleSolarisStudio-Solaris-Sparc
+	cc   -c -g -o build/Debug/OracleSolarisStudio-Solaris-Sparc/main.o main.c
+dist/Debug/OracleSolarisStudio-Solaris-Sparc/worksheet2:	/usr/lib/libc.so 
+	mkdir -p dist/Debug/OracleSolarisStudio-Solaris-Sparc
+	cc    -o dist/Debug/OracleSolarisStudio-Solaris-Sparc/worksheet2 build/Debug/OracleSolarisStudio-Solaris-Sparc/main.o  
